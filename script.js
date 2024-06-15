@@ -1,4 +1,6 @@
-let price = 3.26;
+let totalPrice = document.getElementById('total-price');
+let price = Number(totalPrice.value);
+
 let cid = [
   ['PENNY', 1.01],
   ['NICKEL', 2.05],
@@ -14,7 +16,6 @@ let cid = [
 const displayChangeDue = document.getElementById("change-due");
 const cash = document.getElementById("cash");
 const purchaseBtn = document.getElementById("purchase-btn");
-const priceScreen = document.getElementById("price-screen");
 const cashInDrawer = document.getElementById("cash-in-drawer");
 const cashAddedToRegister = document.getElementById('register-addition');
 const penny = document.getElementById('penny');
@@ -116,21 +117,22 @@ const updateUI = change => {
     });
   }
 
-  cash.value = '';
-  priceScreen.textContent = `Total: $${price}`;
+  cash.value = ''; 
   cashInDrawer.innerHTML = `<p><strong>Change in drawer:</strong></p>
-    ${cid
-      .map(money => `<p>${currencyNameMap[money[0]]}: $${money[1]}</p>`)
-      .join('')}
+  ${cid
+    .map((money, index) => { // Determine the formatting based on the index
+      const formattedAmount = index < 4 ? money[1].toFixed(2) : money[1].toFixed(0);
+      return `<p>${currencyNameMap[money[0]]}: $${formattedAmount}</p>`;
+    })
+    .join('')}
   `;
 };
 
 //
-/* TODO: add input in price-screen to adjust price of item to purchase (cause F.U.N.)
-*/
 const denominationMultiplier = (denomination) => {
   let cashForRegister = Number(cashAddedToRegister.value);
-  return cashForRegister * denomination;
+  let newMoney = cashForRegister * Number(denomination);
+  return newMoney;
 };
 
 // eventListeners for each of the 9 denomination buttons (theres likely a better way but lets implement this first) [WORKS]
