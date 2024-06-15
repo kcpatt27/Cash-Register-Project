@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="styles.css"/>
+        <title>Cash Register</title>
+    </head>
+    <body>
+        <main>
+            <button id="theme-toggle" class="theme-toggle">🌞</button>
+            <h1>Cash Register Project</h1>
+            <div id="change-due"></div>
+            <div id="input-div">
+                <label>Enter Cash from Customer:</label>
+                <input type="number" id="cash" class="user-input" placeholder="  enter cash from customer here" value/>
+                <button id="purchase-btn" class='check-btn-styles'>Purchase</button>
+            </div>
+            <div class="container">
+                <div class='top-display-screen-container'>
+                    <p id='price-screen' class='price-screen'></p>
+                    <div class='connector'></div>
+                </div>
+                <div id='top-register' class='register'>
+                    <div class='btns-container'>
+                        <input id='register-addition' type='number' placeholder=' enter cash for register here' />
+                        <button class='btn' id="penny">+$0.01</button>
+                        <button class='btn' id="nickel">+$0.05</button>
+                        <button class='btn' id="dime">+$0.10</button>
+                        <button class='btn' id="quarter">+$0.25</button>
+                        <button class='btn' id="one">+$1</button>
+                        <button class='btn' id="five">+$5</button>
+                        <button class='btn' id="ten">+$10</button>
+                        <button class='btn' id="twenty">+$20</button>
+                        <button class='btn' id="hundred">+$100</button>
+                    </div>
+                    <div id='cash-in-drawer' class='cash-in-drawer'></div>
+                </div>
+                <div id='bottom-register' class='register'>
+                    <div class='circle'></div>
+                </div>
+            </div>
+        </main>
+        <script src="script.js"></script>
+    </body>
+</html>
