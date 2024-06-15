@@ -1,5 +1,4 @@
 /* Project Styling */
-
 *{
   margin: 0;
   padding: 0;
@@ -44,12 +43,13 @@ input::placeholder{
   font-style: italic;
 }
 .user-input{
-  height: 30px;
+  height: 32px;
   padding: 10px;
   margin: 10px;
   font-size: 15px;
+  border-radius: 3px;
 }
-.price-screen{
+#price-screen{ 
   background-color: black;
   color: white;
   align-items: center;
@@ -57,21 +57,28 @@ input::placeholder{
   border: 10px solid gray;
   height: 50px;
   width: 270px;
-  margin: 0 0 0 -40px;
+  margin: 0 0 20px -32px;
   font-size: 1.2rem;
   text-align: center;
   display: flex;
   flex-wrap: wrap;
+  border-radius: 12px;
 }
-#price{
+#total-text{
+  font-size: 1.5rem;
+}
+#total-price{
+  border-radius: 1.5px;
   font-size: 1.5rem;
   text-align: center;
+  width: 120px;
+  margin: 10px
 }
 .connector{
-  margin: 0 0 0 -20px;
+  margin: 0 120px 0 0;
   background-color: gray;
-  height: 30px;
-  width: 60px;
+  height: 40px;
+  width: 84px;
 }
 .register{
   width: 420px;
@@ -146,11 +153,9 @@ input::placeholder{
   height: 20px;
   background-color: black;
 }
-
 /* END Project Styling */
 
 /* Light/Dark Toggle */
-
 body {
 transition: background-color 0.32s, color 0.32s;
 }
@@ -175,5 +180,4 @@ body.light-mode {
     right: 10px;
     outline: none;
 }
-
 /* END Light/Dark Toggle */
